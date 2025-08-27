@@ -16,3 +16,9 @@ def inloggnings_system(korrekt_användarnamn, korrekt_lösenord): # skapar en fu
             else: # annars skriver vi ut en text med antal försök kvar och loopen fortsätter
                 print("Felaktigt användarnamn eller lösenord. Du har", felaktiga_försök, "försök kvar, Försök igen.") 
 inloggnings_system(korrekt_användarnamn, korrekt_lösenord) # kallar på funktionen som vi skapade ovan. 
+
+# Att göra : 
+# Lägg till fler användare med olika användarnamn och lösenord.
+# Lägg till en funktion som låter användaren byta lösenord när den är inloggad.
+# Lägg till en funktion som låter användaren skapa ett nytt konto med användarnamn och lösenord.
+# Ge användaren olika meny val efter inloggning, t.ex. "1. Byt lösenord", "2. Skapa nytt konto", "3. Logga ut".
