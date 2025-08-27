@@ -1,22 +1,18 @@
-corret_username = ("Ikaros") # correct login username
-correct_password = ("Telia123") # correct login password
+korrekt_användarnamn = ("Ikaros") # korrect inloggnings användarnamn  
+korrekt_lösenord = ("Telia123") # korrect inloggnings lösenord
 
-print("Please input your username and password.") # tells user to input username and password
-password_fails = 3 # number of attempts user has to input correct username and password
-
-while password_fails > 0: # while loop to allow user to try again if they input wrong username or password
-    
-    username = input("Username: ") # asks user to input username
-    password = input("Password: ") # asks user to input password
-
-    if username == corret_username and password == correct_password: # checks if username and password are correct
-        print(f"Welcome {username}! You have successfully logged in.") # if correct, user is logged in
-        break # breaks the loop
-    else: # if incorrect, user is told to try again
-        print("Invalid username or password. Please try again.")
-        password_fails -= 1 # subtracts 1 from number of attempts left
-        if password_fails == 0: # if user has no attempts left, they are told access is denied
-            print("Too many failed attempts. Access denied.")
-            break # breaks the loop
-        else: # if user has attempts left, they are told how many attempts they have left
-            print(f"You have {password_fails} attempts left.")
+def login_system(korrekt_användarnamn, korrekt_lösenord): # skapar en funktion för ett inloggningssystem
+    felaktiga_försök = 3 # förbestämmer antal felaktiga försök som går att göra
+    while felaktiga_försök > 0: # så länge felaktiga försök är större än 0
+        användarnamn = input("Användarnamn:") # ber användaren skriva in sitt användarnamn
+        lösenord = input("Lösenord: ") # ber användaren skriva in sitt lösenord
+        if användarnamn == korrekt_användarnamn and lösenord == korrekt_lösenord: # om användarnamn och lösenord är korrekt så skriver vi ut en text och hoppar ur loopen.
+            print("Välkommen", användarnamn, ":) Du har nu loggat in.") # Välkomnar användaren
+            break
+        else:
+            felaktiga_försök -= 1 # om användarnamn eller lösenord är felaktigt så minskar vi antalet försök med 1
+            if felaktiga_försök == 0: # om felaktiga försök är 0 så skriver vi ut en text och avslutar programmet
+                print("För många felaktiga försök. Ditt program avslutas.")
+            else: # annars skriver vi ut en text med antal försök kvar och loopen fortsätter
+                print("Du har", felaktiga_försök, "försök kvar. Försök igen.") 
+login_system(korrekt_användarnamn, korrekt_lösenord) # kallar på funktionen
