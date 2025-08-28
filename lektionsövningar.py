@@ -26,15 +26,43 @@
 #   if age < 12:
 #       print("Du har inte Ikaros!")
 
-from time import sleep
-def show_some_looping():
-    the_number: int = 10
+     #      from time import sleep
+     #     def show_some_looping():
+     #          the_number = 10
+     #          for i in range(10,0):
+     #              print(f"not yet...{i}")
+     #           the_number -= 1
+     #          print("Happy New Year!")
+     #      
+     #      show_some_looping()
+
+#   for i in range (1, 11):
+#       print(i)
+
+#   samladebetyg: int = 0
+
+    # Ikaros
+#   def betyg(ip, gp):
+#       indivduell_poäng = ip
+#       gruppoäng = gp
+#       samladebetyg = indivduell_poäng + gruppoäng
+#       return samladebetyg
+
+    # Ikaros
+#   elever = ["Ikaros", "Lowe"]
+
+#   for elev in elever:
+  #     print(f"{elev} har totalt {betyg(34, 23)} poäng")
 
 
-while the_number > 1:
-    print(f"not yet...{the_number}")
-    sleep(1)
-    the_number -= 1
-    print("Happy New Year!")
- 
-show_some_looping()
+def hello(namn):
+    input("Vad heter du? ")
+    return f"Hej {namn}!"
+
+hälsningsfras = hello("Ikaros")
+print(hälsningsfras)
+
+
+
+
+
