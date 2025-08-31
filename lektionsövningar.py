@@ -55,13 +55,20 @@
   #     print(f"{elev} har totalt {betyg(34, 23)} poäng")
 
 
-def hello(namn):
-    input("Vad heter du? ")
-    return f"Hej {namn}!"
+  #     def hello(namn):
+   #        input("Vad heter du? ")
+    #       return
 
-hälsningsfras = hello("Ikaros")
-print(hälsningsfras)
+     #  hälsningsfras = hello("Ikaros")
+     #  print(hälsningsfras)
 
+import random
+for i in range(100):  # Perform 100 coin flips.
+    if random.randint(0, 1) == 0:
+        print('H', end=' ')
+    else:
+        print('T', end=' ')
+print()  # Print one newline at the end.
 
 
 
