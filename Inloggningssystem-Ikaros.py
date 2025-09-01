@@ -1,13 +1,13 @@
-konton = {"Ikaros" : "Telia123"}
+konton = {"Användarnamn":"Ikaros", "Lösenord":"Telia123"}
 
 def inloggnings_system(konton) : # skapar en funktion som tar emot två parametrar, korrekt användarnamn och korrekt lösenord
     felaktiga_försök = 3 # förbestämmer antal felaktiga försök som går att göra
     while felaktiga_försök > 0: # så länge felaktiga försök är större än 0
-        användarnamn = input("Användarnamn:") # ber användaren skriva in sitt användarnamn
-        lösenord = input("Lösenord: ") # ber användaren skriva in sitt lösenord
-        if användarnamn in konton and konton[användarnamn] == lösenord : # kollar om användarnamn finns i konton och om lösenordet stämmer
-            print("Välkommen", användarnamn, ":) Du har nu loggat in.") # Välkomnar användaren
-            return användarnamn # returnerar användarnamnet så vi kan använda det senare
+        konton["Användarnamn"] = input("Användarnamn:") # ber användaren skriva in sitt användarnamn
+        konton["Lösenord"] = input("Lösenord: ") # ber användaren skriva in sitt lösenord
+        if konton["Användarnamn"] in konton and konton["Användarnamn"] == konton["Lösenord"]: # kollar om användarnamn finns i konton och om lösenordet stämmer
+            print("Välkommen", konton["Användarnamn"], ":) Du har nu loggat in.") # Välkomnar användaren
+            return konton["Användarnamn"] # returnerar användarnamnet så vi kan använda det senare
         else:
             felaktiga_försök -= 1 # om användarnamn eller lösenord är felaktigt så minskar vi antalet försök med 1
             if felaktiga_försök == 0: # om felaktiga försök är 0 så skriver vi ut en text och avslutar programmet
@@ -22,10 +22,11 @@ def skapa_konto(): # funktion för att skapa nytt konto
     print("Konto skapat för användare:", nytt_användarnamn)
 def byt_lösenord(konton, användarnamn): # funktion för att byta lösenord
     nuvarande_lösenord = input("Ange ditt nuvarande lösenord: ")
-    if konton[användarnamn] == nuvarande_lösenord:
+    if konton["Lösenord"] == nuvarande_lösenord:
         nytt_lösenord = input("Ange ditt nya lösenord: ")
-        konton[användarnamn] = nytt_lösenord
+        konton["Lösenord"] = nytt_lösenord
         print("Lösenordet har ändrats.")
+        print(f"Nya lösenord är : {konton["Lösenord"]}")
     else:
         print("Felaktigt nuvarande lösenord. Lösenordet har inte ändrats.")
 
