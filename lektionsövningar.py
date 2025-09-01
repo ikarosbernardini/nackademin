@@ -126,16 +126,16 @@
       #  print(list(adress.keys()))
       #  print(adress.values())
       #  print(adress["namn"])
-adress = [
-    {"namn":"Dennis","efternamn":"Rudin"},
-    {"namn":"Nina","efternamn":"Rudin"},
-    {"namn":"Juha","efternamn":"Rudin"},
-    {"namn":"Kalle","efternamn":"Rudin"}
-]
+    #    adress = [
+    #        {"namn":"Dennis","efternamn":"Rudin"},
+    #        {"namn":"Nina","efternamn":"Rudin"},
+     #       {"namn":"Juha","efternamn":"Rudin"},
+    #        {"namn":"Kalle","efternamn":"Rudin"}
 
-print(adress[0].get("nisse"))
 
-for person in adress:
-    print("Namn:", person["namn"])
-    print("Efternamn:",person["efternamn"])
-   # print(person)
+  #      print(adress[0].get("nisse"))
+
+   #     for person in adress:
+   #         print("Namn:", person["namn"])
+   #         print("Efternamn:",person["efternamn"])
+        # print(person)
