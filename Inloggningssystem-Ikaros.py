@@ -73,3 +73,4 @@ if användare: # om användare inte är None (dvs inloggningen lyckades) så kal
 # Lägg till en funktion som låter användaren skapa ett nytt konto med användarnamn och lösenord.
 # Ge användaren olika meny val efter inloggning, t.ex. "1. Byt lösenord", "2. Skapa nytt konto", "3. Logga ut".
 # Håller på att finslipa menyerna och så man kan skapa flera konton och byta lösenord samt byta användare när man är inloggad.  
+#dadaadada
