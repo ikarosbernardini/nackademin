@@ -1,6 +1,6 @@
-Ikaros och Lowes git repo
+Ikaros och gängets git repo
 
-Detta är ett repo för Ikaros och Lowe som är menat som en testmiljö för våra scripts och annat.
+Detta är ett repo för Ikaros och samtliga deltagande som är menat som en testmiljö för våra scripts och annat.
 
 För att använda vårat repo gör du följande :
 
@@ -8,6 +8,6 @@ För att använda vårat repo gör du följande :
 2. Kör scriptet genom att  skriva:  python3 nackademin.py i din bash terminal.  
 
 -------------
-Ikaros & Lowe
+Ikaros & gänget
 -------------
 
