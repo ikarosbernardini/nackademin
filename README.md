@@ -6,8 +6,8 @@ Tänk på att alltid skapa dina script med ditt namn så vi inte overwritar vara
 
 För att använda vårat repo gör du följande :
 
-1. Klona repot: skriv git clone https://github.com/ikarosbernardini/nackademin.git sedan skriv: cd nackademin
-2. Kör scriptet genom att  skriva:  python3 nackademin.py i din bash terminal.  
+1. Klona repot: skriv " git clone https://github.com/ikarosbernardini/nackademin.git"  sedan skriv: cd nackademin
+2. Kör scriptet genom att  skriva:  python3 följt av vilket script i repot du vill öppna med "Namn.py" i din bash terminal.  
 
 -------------
 Ikaros & gänget
