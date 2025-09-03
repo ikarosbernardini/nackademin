@@ -8,9 +8,25 @@
        #             print(i)
         #    count(max_limit=101)
 
+""" 
 def add(a, b):
-    return a + b
+return a + b
 
 result = add(5, 3)
 print(result) 
+
+print("I eat {} alot of burritos".format(result))"""
+
+spam = 1 
+
+def hälsa(spam: int):
+    if spam == 1:
+        print("Hello!")
+    elif spam == 2:
+        print("Howdy")
+    else:
+        print("Greetings!")
+
+hälsa(spam)
+
 
