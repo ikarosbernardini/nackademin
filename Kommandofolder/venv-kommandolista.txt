@@ -1,0 +1,23 @@
+# 🐍 Skapa en virtuell miljö
+python -m venv venv
+
+# 🚀 Aktivera miljön (Linux/macOS)
+source venv/bin/activate
+
+# 🚀 Aktivera miljön (Windows)
+venv\Scripts\activate
+
+# 🧪 Installera paket
+pip install <paketnamn>
+
+# 📋 Spara installerade paket
+pip freeze > requirements.txt
+
+# 📜 Visa installerade paket
+pip list
+
+# 🛑 Avsluta miljön
+deactivate
+
+# 🧹 Ta bort miljön (om du vill rensa helt)
+rm -rf venv
