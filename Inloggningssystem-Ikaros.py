@@ -68,9 +68,18 @@ if användare: # om användare inte är None (dvs inloggningen lyckades) så kal
 
 
 # Att göra : 
+# Få in try / expect funktioner i programmet för att göra det mer rubust. 
+# Fixa så att man startar programmet som en gäst och blir välkommnad efter specifikt inloggat konto. 
 # Lägg till fler användare med olika användarnamn och lösenord.
 # Lägg till en funktion som låter användaren byta lösenord när den är inloggad.
 # Lägg till en funktion som låter användaren skapa ett nytt konto med användarnamn och lösenord.
 # Ge användaren olika meny val efter inloggning, t.ex. "1. Byt lösenord", "2. Skapa nytt konto", "3. Logga ut".
 # Håller på att finslipa menyerna och så man kan skapa flera konton och byta lösenord samt byta användare när man är inloggad.  
-#dadaadada
+# anvönd setdefault 
+# använd dig av "The isX() string methods are helpful when you need to validate user input. For example, the following program repeatedly asks users for their age and a password until they provide valid input. Open a new file editor window and enter this program, saving it as validateInput.py:"
+
+    #    import os
+
+     #   os.mkdir "Python Scripts"
+
+            
