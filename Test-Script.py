@@ -40,17 +40,19 @@ except SystemError:
 
 try:
 """
+import pyperclip
 
-while True:
-    print('Enter your age:')
-    age = input()
-    if age.isdecimal():
-        break
-    print('Please enter a number for your age.')
+text = pyperclip.paste()  # Get the text off the clipboard.
+alt_text = ''  # This string holds the alternating case.
+make_uppercase = False
+for character in text:
+    # Go through each character and add it to alt_text:
+    if make_uppercase:
+        alt_text += character.upper()
+    else:
+        alt_text += character.lower()
 
-while True:
-    print('Select a new password (letters and numbers only):')
-    password = input()
-    if password.isalnum():
-        break
-    print('Passwords can only have letters and numbers.')
+    # Set make_uppercase to its opposite value:
+    make_uppercase = not make_uppercase
+pyperclip.copy(alt_text)  # Put the result on the clipboard.
+print(alt_text)  # Print the result on the screen too.
