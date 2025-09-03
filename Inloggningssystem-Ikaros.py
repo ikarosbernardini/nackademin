@@ -74,3 +74,5 @@ if användare: # om användare inte är None (dvs inloggningen lyckades) så kal
 # Ge användaren olika meny val efter inloggning, t.ex. "1. Byt lösenord", "2. Skapa nytt konto", "3. Logga ut".
 # Håller på att finslipa menyerna och så man kan skapa flera konton och byta lösenord samt byta användare när man är inloggad.  
 #dadaadada
+# Lägg till funktion som gör att lösenordet inte syns dvs (****) när användaren skriver lösenord.
+# Lägg till att lösenordet även är krypterat i själva "koden"
