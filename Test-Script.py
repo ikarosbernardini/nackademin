@@ -16,7 +16,7 @@ result = add(5, 3)
 print(result) 
 
 print("I eat {} alot of burritos".format(result))"""
-
+"""
 spam = 1 
 
 def hälsa(spam: int):
@@ -30,3 +30,27 @@ def hälsa(spam: int):
 hälsa(spam)
 
 
+try: # fungerar som try.parse eller try.catch C# 
+
+
+except SystemError:
+
+    pass
+
+
+try:
+"""
+
+while True:
+    print('Enter your age:')
+    age = input()
+    if age.isdecimal():
+        break
+    print('Please enter a number for your age.')
+
+while True:
+    print('Select a new password (letters and numbers only):')
+    password = input()
+    if password.isalnum():
+        break
+    print('Passwords can only have letters and numbers.')
