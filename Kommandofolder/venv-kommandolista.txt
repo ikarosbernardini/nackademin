@@ -1,23 +1,25 @@
-# 🐍 Skapa en virtuell miljö
-python -m venv venv
+python -m venv venv 
+^ Skapar den virtuella maskinen 
 
-# 🚀 Aktivera miljön (Linux/macOS)
 source venv/bin/activate
+^Aktivera miljön (Linux eller mac)
 
-# 🚀 Aktivera miljön (Windows)
 venv\Scripts\activate
+^Aktivera miljön (Windows)
 
-# 🧪 Installera paket
 pip install <paketnamn>
+^Installera olika paket på den virtuella maskinen. 
 
-# 📋 Spara installerade paket
-pip freeze > requirements.txt
+pip freeze > test.txt
+^Användas för att spara ens installerade paket i en ny text fil på ens egna dator. T.ex. om man skulle vilja spara ner några paket man tycker om och vill snabbt kunna installera dem igen på antigen sin egna maskin eller i sin virutella maskin. 
 
-# 📜 Visa installerade paket
 pip list
+^Ger en lista på dem installerade paketen. 
 
-# 🛑 Avsluta miljön
 deactivate
+^Hur man stänger av den virutella maskinen
 
-# 🧹 Ta bort miljön (om du vill rensa helt)
 rm -rf venv
+^Hur man raderar den virtuella maskinen från ens dator
+
+Alla dessa kommandon ska köras direkt i terminalen. 
