@@ -1,4 +1,7 @@
-konton = {"Ikaros" : "Telia123"} # här skapar jag en dictonary för förbestämt användarnamn och lösenord. 
+konton = with open("inloggningsuppgifter.txt" "r") as a file 
+
+
+{"Ikaros" : "Telia123"} # här skapar jag en dictonary för förbestämt användarnamn och lösenord. 
 
 def inloggnings_system(konton) : # skapar en funktion som ska emot två parametrar, korrekt användarnamn och korrekt lösenord
     felaktiga_försök = 3 # förbestämmer antal felaktiga försök som går att göra vilket jag sätter till : 3
