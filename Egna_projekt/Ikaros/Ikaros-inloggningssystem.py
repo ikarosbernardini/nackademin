@@ -1,14 +1,38 @@
-konton = with open("inloggningsuppgifter.txt" "r") as a file 
+import os # importerar os bibloteket
 
+users = "users" # gör en variabel för mappen "users" 
+felaktiga_försök = 3 
 
-{"Ikaros" : "Telia123"} # här skapar jag en dictonary för förbestämt användarnamn och lösenord. 
+def hämta_lösenord(användarnamn): # skapat en metod för att hämta lösenordet från de angivna filnamnet. 
+    filväg = os.path.join("users", f"{användarnamn}.txt")
+    print("Försöker läsa från fil:", os.path.join("users", f"{användarnamn}.txt"))
+    if os.path.exists(filväg):
+        print("Filen hittades!")
+        try:
+            with open(filväg, "r") as fil:
+                lösenord = fil.read().strip()
+                print("Läst lösenord:",repr(lösenord))
+                return lösenord
+        except Exception as e:
+            print("Fel vid läsning:",e)
+            return None
+        
+        
+    else:
+        print("Filen hittades inte.")
+        return None
 
-def inloggnings_system(konton) : # skapar en funktion som ska emot två parametrar, korrekt användarnamn och korrekt lösenord
-    felaktiga_försök = 3 # förbestämmer antal felaktiga försök som går att göra vilket jag sätter till : 3
+    
+def logga_in():
+     # förbestämmer antal felaktiga försök som går att göra vilket jag sätter till : 3
+    global felaktiga_försök 
     while felaktiga_försök > 0: # så länge felaktiga försök är större än 0 så får användaren försöka igen
         användarnamn = input("Användarnamn:") # ber användaren skriva in sitt användarnamn
-        lösenord = input("Lösenord: ") # ber användaren skriva in sitt lösenord
-        if användarnamn in konton and konton[användarnamn] == lösenord : # kollar om användarnamn finns i konton och om lösenordet stämmer
+        lösenord = input("Lösenord:") # ber användaren skriva in sitt lösenord 
+        registerad_användare =  hämta_lösenord(användarnamn)
+        print("Lösenord i filen:", repr(registerad_användare))
+
+        if registerad_användare and lösenord == registerad_användare: # kollar om användarnamn finns i konton och om lösenordet stämmer
             print("Välkommen", användarnamn, ":) Du har nu loggat in.") # Välkomnar användaren vid korrekt inloggingsuppgifter.
             return användarnamn # returnerar användarnamnet så vi kan använda det senare
         else:
@@ -18,71 +42,11 @@ def inloggnings_system(konton) : # skapar en funktion som ska emot två parametr
                 break 
                 return None
             else: # annars skriver vi ut en text med antal försök kvar och loopen fortsätter
-                print("Felaktigt användarnamn eller lösenord. Du har", felaktiga_försök, "försök kvar, Försök igen.") 
-def skapa_konto(): # funktion för att skapa nytt konto
-    nytt_användarnamn = input("Ange ett nytt användarnamn: ") # skapar en ny variabel med användarens input för att skapa ett nytt konto och lagra uppgifterna.
-    nytt_lösenord = input("Ange ett nytt lösenord: ") # samma som ovan fast enbart med lösenord istället.
-    konton[nytt_användarnamn] = nytt_lösenord
-    print("Konto skapat för användare:", nytt_användarnamn)
-def byt_lösenord(konton, användarnamn): # funktion för att byta lösenord
-    nuvarande_lösenord = input("Ange ditt nuvarande lösenord: ")
-    if konton[användarnamn] == nuvarande_lösenord:
-        nytt_lösenord = input("Ange ditt nya lösenord: ")
-        konton[användarnamn] = nytt_lösenord
-        print("Lösenordet har ändrats.")
-        print(f"Ditt nya lösenord är : {nytt_lösenord} ")
-    else:
-        print("Felaktigt nuvarande lösenord. Lösenordet har inte ändrats.")
-#def byt_användare(konton, användarnamn): 
-
-
-def meny_efter_inloggning(användarnamn): # meny efter inloggning
-    while True:
-        print(f"\nInloggad som {användarnamn}")
-        print("1. Skapa nytt konto") # meny val för att skapa nytt konto, byta lösenord 
-        print("2. Byt lösenord")   # meny val för att skapa nytt konto, byta lösenord 
-        print("3. Byt användare") # meny val för att byt användare. 
-        print("4. Logga ut") #  meny val för logga ut och få möjligheten att logga in igen.
-        print("5. Avsluta programmet") # meny val för att stänga ner programmet helt. 
-        val = input("Välj ett alternativ: ")
-        if val == "1":
-            print("Skapar nytt konto...")
-            skapa_konto() # anropar funktionen för att skapa nytt konto
-        elif val == "2":
-            byt_lösenord(konton, användarnamn)         # anropar funktionen för att byta lösenord
-        elif val == "3":
-            byt_användare(konton, användarnamn)        # anropar funktionen för att byta användare
-        elif val == "4":
-            print("Du har nu loggat ut ifrån ditt konto och behöver logga in igen för att fortsätta.")
-            inloggnings_system(konton)
-            
-          
-        elif val == "5":
-            print("Programmet avslutas.")
-            break # avslutar programmet
-        else:
-            print("Ogiltigt val.")
-användare = inloggnings_system(konton) # kallar på funktionen som vi skapade ovan.
-if användare: # om användare inte är None (dvs inloggningen lyckades) så kallar vi på menyn efter inloggning
-    meny_efter_inloggning(användare) # kallar på menyn efter inloggning
+                print("Felaktigt användarnamn eller lösenord. Du har", felaktiga_försök, "försök kvar, Försök igen.")
+logga_in()
+        
 
 
 
 
 
-# Att göra : 
-# Få in try / expect funktioner i programmet för att göra det mer rubust. 
-# Fixa så att man startar programmet som en gäst och blir välkommnad efter specifikt inloggat konto. 
-# Lägg till fler användare med olika användarnamn och lösenord.
-# Lägg till en funktion som låter användaren byta lösenord när den är inloggad.
-# Lägg till en funktion som låter användaren skapa ett nytt konto med användarnamn och lösenord.
-# Ge användaren olika meny val efter inloggning, t.ex. "1. Byt lösenord", "2. Skapa nytt konto", "3. Logga ut".
-# Håller på att finslipa menyerna och så man kan skapa flera konton och byta lösenord samt byta användare när man är inloggad.  
-# anvönd setdefault 
-# använd dig av "The isX() string methods are helpful when you need to validate user input. For example, the following program repeatedly asks users for their age and a password until they provide valid input. Open a new file editor window and enter this program, saving it as validateInput.py:"
-
-    #    import os
-
-     #   os.mkdir "Python Scripts"
-
-            
