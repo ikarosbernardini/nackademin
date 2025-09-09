@@ -41,7 +41,6 @@ def logga_in():
                 return None
             else: # annars skriver vi ut en text med antal försök kvar och loopen fortsätter
                 print("Felaktigt användarnamn eller lösenord. Du har", felaktiga_försök, "försök kvar, Försök igen.")
-logga_in()
 
 def skapa_konto():
     nytt_användarnamn = input("Ange ett nytt användarnamn: ")
@@ -79,29 +78,27 @@ def meny_efter_inloggning(användarnamn):
         print("1. Skapa nytt konto")
         print("2. Byt lösenord")
         print("3. Byt användare")
-        print("4. Logga ut")
-        print("5. Avsluta programmet")
+        print("4. Avsluta programmet")
         val = input("Välj ett alternativ: ")
 
         if val == "1":
             skapa_konto()
         elif val == "2":
-            byt_lösenord()
+            byt_lösenord(användarnamn)
         elif val == "3":
             användarnamn = byt_användare()
             if användarnamn:
                 continue
             else:
                 break
-        elif val == "4":
-            print("\nDu har nu loggat ut")
-            break
-        elif val == "5": 
+        elif val == "4": 
             print("\nProgrammet avslutas.")
             exit()
         else:
             print("Ogiltigt val, försök igen")
 
-
+användare = logga_in()
+if användare:
+    meny_efter_inloggning(användare)
 
 
