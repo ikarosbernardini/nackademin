@@ -1,15 +1,15 @@
 import os # importerar os bibloteket
 
 users = "users" # gör en variabel för mappen "users" 
-felaktiga_försök = 3 
+felaktiga_försök = 3 # skapar en global variabel med värdet : 3 för att definera hur många försök användaren blir tilldelad.
 
 def hämta_lösenord(användarnamn): # skapat en metod för att hämta lösenordet från de angivna filnamnet. 
-    filväg = os.path.join("users", f"{användarnamn}.txt")
-    print("Försöker läsa från fil:", os.path.join("users", f"{användarnamn}.txt"))
+    filväg = os.path.join("users", f"{användarnamn}.txt") # skapar en variabel som läser igenom mapen "users" och letar efter användarnamnet användaren matar in .txt
+    print("Försöker läsa från fil:", os.path.join("users", f"{användarnamn}.txt")) # förnuvarnde debugging
     if os.path.exists(filväg):
-        print("Filen hittades!")
-        try:
-            with open(filväg, "r") as fil:
+        print("Filen hittades!")   # bekräftar för mig att filen har hittats vid debugging
+        try:  # användar en try - execpt metod för debugging återigen (hade mycket problem med skriptet från början att hitta filen)
+            with open(filväg, "r") as fil: 
                 lösenord = fil.read().strip()
                 print("Läst lösenord:",repr(lösenord))
                 return lösenord
@@ -17,11 +17,9 @@ def hämta_lösenord(användarnamn): # skapat en metod för att hämta lösenord
             print("Fel vid läsning:",e)
             return None
         
-        
     else:
         print("Filen hittades inte.")
         return None
-
     
 def logga_in():
      # förbestämmer antal felaktiga försök som går att göra vilket jag sätter till : 3
@@ -44,8 +42,65 @@ def logga_in():
             else: # annars skriver vi ut en text med antal försök kvar och loopen fortsätter
                 print("Felaktigt användarnamn eller lösenord. Du har", felaktiga_försök, "försök kvar, Försök igen.")
 logga_in()
-        
 
+def skapa_konto():
+    nytt_användarnamn = input("Ange ett nytt användarnamn: ")
+    nytt_lösenord = input("Ange ett nytt lösenord: ")
+    filväg = os.path.join("users", f"{nytt_användarnamn}.txt")
+
+    if os.path.exists(filväg):
+        print("Användarnamnet finns redan.")
+    else:
+        with open(filväg, "w") as fil:
+            fil.write(nytt_lösenord)
+        print("Konto har skapats för användare:", nytt_användarnamn)
+def byt_lösenord(användarnamn):
+    filväg = os.path.join("users", f"{användarnamn}.txt")
+    if not os.path.exists(filväg):
+        print("Användaren hittades inte, Vänligen försök igen.")
+        return
+    nuvarande_lösenord = input("Ange ditt nuvarande lösenord:")
+    with open(filväg, "r") as fil:
+        sparat_lösenord = fil.read().strip()
+    if sparat_lösenord == nuvarande_lösenord:
+        nytt_lösenord = input("Ange ditt nya lösenord:")
+        with open(filväg, "w") as fil:
+            fil.write(nytt_lösenord)
+            print("Lösenordet har ändrats.")
+    else:
+        print("Felaktigt lösenord, lösenordet har inte ändrats.")
+def byt_användare():
+    print("Du har nu loggat ut,vänligen logga in igen med vald användare.")
+    return logga_in()
+
+def meny_efter_inloggning(användarnamn):
+    while True:
+        print(f"\nInloggad som {användarnamn}")
+        print("1. Skapa nytt konto")
+        print("2. Byt lösenord")
+        print("3. Byt användare")
+        print("4. Logga ut")
+        print("5. Avsluta programmet")
+        val = input("Välj ett alternativ: ")
+
+        if val == "1":
+            skapa_konto()
+        elif val == "2":
+            byt_lösenord()
+        elif val == "3":
+            användarnamn = byt_användare()
+            if användarnamn:
+                continue
+            else:
+                break
+        elif val == "4":
+            print("\nDu har nu loggat ut")
+            break
+        elif val == "5": 
+            print("\nProgrammet avslutas.")
+            exit()
+        else:
+            print("Ogiltigt val, försök igen")
 
 
 
