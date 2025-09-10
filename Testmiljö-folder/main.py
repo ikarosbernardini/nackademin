@@ -27,6 +27,7 @@ def matte(tal1, tal2):
     print("Subtrahera: ",str,subtrahera(tal1, tal2))
     print("Dividera: ", str,dividera(tal1, tal2))
     print("Multiplicera: ", str,multiplicera(tal1, tal1))
+    matte()
 
 if __name__ == "__main__":
     matte(30, 39)
