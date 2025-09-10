@@ -12,6 +12,11 @@
 # evenutellt någon form av prompt / gui 
 # läsa in uppgifter från mer än bara .txt filen och på mer optimerade sätt. 
 
+# Kvar att göra :
+# Kommentera resterande kod.
+# Skapa diagram flöde med pseudokod.
+
+
 
 import os # importerar os bibloteket
 
