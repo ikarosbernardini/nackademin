@@ -1,4 +1,4 @@
-Linux-kommandon – Grundläggande
+Bash-kommandon – Grundläggande
 ls – Lista filer och mappar i aktuell katalog
 cd – Byt katalog
 pwd – Visa aktuell sökväg

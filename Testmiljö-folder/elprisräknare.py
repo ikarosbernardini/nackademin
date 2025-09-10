@@ -1,10 +1,10 @@
 
-          #  with open("timpriser.csv") as file:
-           #     content = (file.readline())
+           with open("timpriser.csv") as file:
+               content = (file.readline())
                 
-          ##      for rad in file:
-          #          content += rad
-          #      print(content)
+               for rad in file:
+                   content += rad
+               print(content)
 
 
 # SKapa några rader kod som öppnar en fil i skrivläge. Filen skall heta helloworld.txt"
