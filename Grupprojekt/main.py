@@ -14,6 +14,10 @@
 
 
 
+# ATT GÖRA LISTA :
+# 1. Skapa en README.md fil som förklarar projektet,
+
+
 
 # KEEP IN MIND 
 # Kör alltid - git pull - innan du börjar koda för att undvika merge konflikter.
