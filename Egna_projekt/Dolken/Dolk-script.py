@@ -11,5 +11,5 @@ else:
     guess = input()
     if toss == guess:
         print("you got it!")
-        else:
-            print("Nope. You are really bad at this game.")
+    else:
+        print("Nope. You are really bad at this game.")

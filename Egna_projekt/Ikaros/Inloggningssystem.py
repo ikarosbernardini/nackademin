@@ -8,6 +8,7 @@
 # 4. Avsluta programmet helt och hållet. 
 
 # Mer funktioner kommer :
+# Kunna ta bort användare 
 # inloggnings-log
 # evenutellt någon form av prompt / gui 
 # läsa in uppgifter från mer än bara .txt filen och på mer optimerade sätt. 
@@ -104,20 +105,20 @@ def meny_efter_inloggning(användarnamn):
         print("4. Avsluta programmet")
         val = input("Välj ett alternativ: ")
 
-        if val == "1":
+        if val == "1":  # skapar ett nytt konto i form av ett .txt fil med användarens namn som "namn"
             skapa_konto()
         elif val == "2":
             byt_lösenord(användarnamn)
-        elif val == "3":
+        elif val == "3": # låter användaren byta inloggad användare. 
             användarnamn = byt_användare()
             if användarnamn:
                 continue
             else:
                 break
-        elif val == "4": 
+        elif val == "4":  # stänger ner programmet och konfirmerar användarens avslut.
             print("\nProgrammet avslutas.")
             exit()
-        else:
+        else: # hanterar alla andra felaktiga inmatningar. 
             print("Ogiltigt val, försök igen")
 
 användare = logga_in()
