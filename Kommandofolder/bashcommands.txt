@@ -1,4 +1,4 @@
-Linux-kommandon – Grundläggande
+Bash-kommandon – Grundläggande
 ls – Lista filer och mappar i aktuell katalog
 cd – Byt katalog
 pwd – Visa aktuell sökväg
@@ -13,5 +13,3 @@ clear – Rensa terminalen
 exit – Stäng terminalsession
 man – Visa manual för kommando
 chmod – Ändra rättigheter
-nano – Enkel texteditor i terminalen
-hej svejs, nu använder jag "vi" för att detta dokument och updatarerar filen och pushar ut den till github!
