@@ -1,17 +1,20 @@
 #  Mini Grupp projket
 
 
-    # Ikaros uppgift 1
-        # Filhantering & Git
-        # Implementera funktioner för att spara/ladda uppgifter till/från en fil (.txt)
-        # Skapa Git-repo, README och hantera versionshantering
-    # Issam uppgift 2
-        # Skapa funktioner för att lägga till, ta bort och markera uppgifter
-        # Hantera listor i minnet (t.ex. med Python-listor eller .txt)
-    # Love uppgfit 3 
-        # Designa menyflödet i terminalen (t.ex. med  och tydlig utskrift)
-        # Se till att användaren får tydliga instruktioner och feedback
 
+
+        # Issam uppgift 1
+            # Skapa funktioner för att lägga till, ta bort och markera uppgifter
+            # Hantera listor i minnet (t.ex. med Python-listor eller .txt)
+        
+        # Love uppgfit 2
+            # Designa menyflödet i terminalen (t.ex. med  och tydlig utskrift)
+            # Se till att användaren får tydliga instruktioner och feedback
+
+        # Ikaros uppgift 3
+            # Filhantering & Git
+            # Implementera funktioner för att spara/ladda uppgifter till/från en fil (.txt)
+            # Skapa Git-repo, README och hantera versionshantering
 
 
 # ATT GÖRA LISTA :
