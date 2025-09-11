@@ -1,6 +1,11 @@
 #  Mini Grupp projket
 
-
+#To-Do App i Terminalen
+#En enkel kommandoradsbaserad To-Do-applikation där användaren kan:
+     #Lägga till uppgifter
+     #Lista uppgifter
+     #Markera uppgifter som klara
+     #Spara uppgifter till en fil
 
 
         # Issam uppgift 1
