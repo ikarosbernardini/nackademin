@@ -16,7 +16,7 @@ scriptname = sys.argv[0]
 print("sysargv:", sys.argv) 
 
 if len(sys.argv) > 1:
-    first_argument = sys.arg[1]
+    first_argument = sys.argv[1]
     print(f"first argument:{first_argument}")
 else:
     first_argument = None 
