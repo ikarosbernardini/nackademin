@@ -21,3 +21,6 @@ def meny(): #Skapar meny för användaren
                 print("Valet finns inte med i listan. Försök igen")
 
 meny()
+
+if __name__ == "__main__":
+        pass
