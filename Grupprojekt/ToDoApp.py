@@ -1,2 +1,6 @@
 import os
-import Ikaros as todo # importerar Ikaros.py filen som "todo" för att kunna använda metoderna jag skapade. 
+import Ikaros as funk # importerar Ikaros.py filen som "funk" för att kunna använda metoderna jag skapade.
+
+
+if __name__ == "__main__": 
+    pass 
