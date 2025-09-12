@@ -30,11 +30,11 @@ def hämta_lösenord(användarnamn): # skapat en metod för att hämta lösenord
     if os.path.exists(filväg): # om filen hittas så läser den in lösenordet och retunerar det.
         print("Filen hittades!")   # bekräftar för mig att filen har hittats vid debugging
         try:  # användar en try - execpt metod för debugging återigen (hade mycket problem med skriptet från början att hitta filen)
-            with open(filväg, "r") as fil: 
-                lösenord = fil.read().strip()
-                print("Läst lösenord:",repr(lösenord))
+            with open(filväg, "r") as fil:  # öppnar filen i läs läge och läser in den.
+                lösenord = fil.read().strip() # läser in filens innehåll och tar bort eventuella extra mellanslag eller radbrytningar.
+                print("Läst lösenord:",repr(lösenord)) # förnuvarnde debugging
                 return lösenord
-        except Exception as e:
+        except Exception as e: # expectar en krash om fil ej skulle gå att läsa in. 
             print("Fel vid läsning:",e)
             return None
         
@@ -84,43 +84,43 @@ def byt_lösenord(användarnamn): # skapat en metod som ändrade lösenord
         return
     nuvarande_lösenord = input("Ange ditt nuvarande lösenord:") # bekräftar att användaren kan sitt nuvarande lösenord.
     with open(filväg, "r") as fil: # öpnar filvägen i .txt filen och läser igenom den för korrekt lösenord.
-        sparat_lösenord = fil.read().strip()
-    if sparat_lösenord == nuvarande_lösenord:
-        nytt_lösenord = input("Ange ditt nya lösenord:")
-        with open(filväg, "w") as fil:
+        sparat_lösenord = fil.read().strip() # sparar inläst lösenord i variabeln "sparat_lösenord"
+    if sparat_lösenord == nuvarande_lösenord: 
+        nytt_lösenord = input("Ange ditt nya lösenord:") # om det stämmer ber vi användaren mata in ett nytt lösenord
+        with open(filväg, "w") as fil: # öppnar filen i skrivläge
             fil.write(nytt_lösenord) # overwritar det nya lösenordet och byter ut de mot de gamla. 
             print("Lösenordet har ändrats.") # bekräftar ändrat lösenord. 
     else:
         print("Felaktigt lösenord, lösenordet har inte ändrats.")
-def byt_användare():
+def byt_användare(): # skapat en metod som låter användaren byta inloggad användare
     print("Du har nu loggat ut,vänligen logga in igen med vald användare.")
-    return logga_in()
+    return logga_in() # retunerar värdet av logga_in() metoden så vi kan logga in med en annan användare.
 
-def meny_efter_inloggning(användarnamn):
-    while True:
-        print(f"\nInloggad som {användarnamn}")
-        print("1. Skapa nytt konto")
+def meny_efter_inloggning(användarnamn): # skapar en meny som visas efter inloggning
+    while True: # så länge som användaren inte väljer att avsluta programmet så körs loopen
+        print(f"\nInloggad som {användarnamn}") 
+        print("1. Skapa nytt konto") 
         print("2. Byt lösenord")
         print("3. Byt användare")
         print("4. Avsluta programmet")
-        val = input("Välj ett alternativ: ")
+        val = input("Välj ett alternativ: ") # ber användaren välja ett alternativ
 
         if val == "1":  # skapar ett nytt konto i form av ett .txt fil med användarens namn som "namn"
-            skapa_konto()
+            skapa_konto() # kör metoden skapa_konto()
         elif val == "2":
             byt_lösenord(användarnamn)
         elif val == "3": # låter användaren byta inloggad användare. 
-            användarnamn = byt_användare()
-            if användarnamn:
-                continue
-            else:
-                break
+            användarnamn = byt_användare() # kör metoden byt_användare() och retunerar värdet av logga_in() metoden så vi kan logga in med en annan användare.
+            if användarnamn: # om användarnamnet inte är None så
+                continue # fortsätter loopen
+            else: 
+                break # annars bryter vi loopen och avslutar programmet
         elif val == "4":  # stänger ner programmet och konfirmerar användarens avslut.
             print("\nProgrammet avslutas.")
             exit()
         else: # hanterar alla andra felaktiga inmatningar. 
             print("Ogiltigt val, försök igen")
 
-användare = logga_in()
-if användare:
-    meny_efter_inloggning(användare)
+användare = logga_in() # kör metoden logga_in() och sparar värdet i variabeln "användare"
+if användare: # om användaren inte är None så körs menyn
+    meny_efter_inloggning(användare) 
