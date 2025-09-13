@@ -27,3 +27,5 @@ def todo_app():
     uppgifter = lägg_till_uppgifter(uppgifter)
     lista_uppgifter(uppgifter)
 
+if __name__ == "__main__":
+    todo_app() # kör todo_app funktionen om filen körs direkt
