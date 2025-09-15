@@ -1,4 +1,10 @@
 import random
+import gissa 
+"""
+Det här är modulen gissa
+Du använder den så här.
+"""
+
 
 def gissa():
     try:
