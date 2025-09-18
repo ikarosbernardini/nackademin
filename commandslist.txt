@@ -1,0 +1,52 @@
+🧱Systemuppdatering och paketinstallation
+
+sudo dnf update -y                      # Uppdatera systemet
+sudo dnf upgrade -y                    # Uppgradera installerade paket
+sudo dnf install <paketnamn>          # Installera ett paket
+sudo dnf remove <paketnamn>           # Ta bort ett paket
+sudo dnf search <paketnamn>           # Sök efter paket
+sudo dnf info <paketnamn>             # Visa info om ett paket
+
+
+🧰 Verktyg och systeminfo
+
+uname -r                              # Visa kernel-version
+hostnamectl                           # Visa och ändra hostname
+neofetch                              # Visa systeminfo (kräver installation)
+top                                   # Visa processer i realtid
+htop                                  # Mer avancerad processvy (kräver installation)
+df -h                                 # Diskanvändning
+free -h                               # RAM-användning
+
+📁 Filhantering
+
+ls -la                                # Lista filer med detaljer
+cd <sökväg>                           # Gå till katalog
+mkdir <mappnamn>                      # Skapa ny mapp
+rm <fil>                              # Ta bort fil
+rm -r <mapp>                          # Ta bort mapp rekursivt
+cp <fil> <destination>                # Kopiera fil
+mv <fil> <destination>                # Flytta/byt namn på fil
+
+🔐 Användare och rättigheter
+
+sudo adduser <namn>                   # Skapa ny användare
+sudo passwd <namn>                    # Ändra lösenord
+sudo userdel <namn>                   # Ta bort användare
+chmod +x <fil>                        # Gör fil körbar
+chown <user>:<group> <fil>           # Ändra ägare
+
+🧪 Git och utveckling
+
+git clone <repo-url>                 # Klona repo
+git status                           # Visa ändringar
+git add .                             # Lägg till alla ändringar
+git commit -m "Meddelande"           # Commit
+git push                              # Skicka till remote
+git pull                              # Hämta senaste från remote
+
+🧠 Extra tips
+
+sudo dnf groupinstall "Development Tools" -y   # Installera utvecklingsverktyg
+sudo dnf install gcc make                      # Kompilator och byggsystem
+sudo dnf install python3-pip                   # Python och pip
