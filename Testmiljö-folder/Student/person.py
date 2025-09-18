@@ -16,6 +16,14 @@ class Person:
     närvaro = 0
     betyg = 0
 
+    def dict(self):
+        return {
+            "namn": self.namn,
+            "klass": self.klass,
+            "närvaro": self.närvaro,
+            "betyg": self.betyg
+        }
+
     def __init__(self, namn: str, klass: str, närvaro: int = 0, betyg: int = 0):
         self.namn = namn
         self.klass = klass
