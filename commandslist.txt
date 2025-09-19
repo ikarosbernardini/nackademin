@@ -1,5 +1,7 @@
 🧱Systemuppdatering och paketinstallation
 
+Fedora - Distro
+
 sudo dnf update -y                      # Uppdatera systemet
 sudo dnf upgrade -y                    # Uppgradera installerade paket
 sudo dnf install <paketnamn>          # Installera ett paket
