@@ -46,7 +46,7 @@ class Person:
         return f"{self.namn} \n {self.klass} \n {self.närvaro} \n {self.betyg}"
 
 if __name__ == "__main__":
-    Kalle = Person(namn=" Kalle", klass="DevOps", närvaro=40, betyg=3)
-    print(Kalle)
-    Kalle.antal_närv()
-    print(Kalle.närvaro)
+    #Kalle = Person(namn=" Kalle", klass="DevOps", närvaro=40, betyg=3)
+    #print(Kalle)
+    #Kalle.antal_närv()
+    #print(Kalle.närvaro)
