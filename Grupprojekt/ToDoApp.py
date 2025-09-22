@@ -4,6 +4,7 @@ import Love as m # importerar Love.py filen som "meny" för att kunna använda m
 import Issam as todo # importerar Issam.py filen som "todo" för att kunna använda metoderna Issam skapade.
 
 def meny(): #Skapar meny för användaren 
+        uppgifter = []
         while True: 
             print("Välkommen till din to do lista.") 
             print("1. Lägg till något i listan.")
@@ -15,15 +16,17 @@ def meny(): #Skapar meny för användaren
             val = input("Välj ett av alternativen: ") #Ber användaren att välja mellan alternativen
 
             if val == "1":
-                    todo.lägg_till_uppgifter
+                 uppgifter = todo.todo_app(uppgifter)
             elif val == "2":
-                    todo.lista_uppgifter
+                    todo.lista_uppgifter(uppgifter)
             elif val == "3":
-                    todo.ta_bort_uppgift
+                index = int(input("Vilken uppgift vill du ta bort? Ange index: 't.ex. 0 = första indexen' "))
+                uppgifter = todo.ta_bort_uppgift(uppgifter, index)
+
             elif val == "4":
-                    funk.spara
+                    funk.spara("todo.txt", uppgifter)
             elif val == "5":
-                    funk.ladda
+                    uppgifter = funk.ladda("todo.txt")
             elif val == "6":
                 print("Avslutar programmet")
                 exit()

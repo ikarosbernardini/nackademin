@@ -1,16 +1,18 @@
 import os
 
-if __name__ == "__main__": # fortfarnade jävligt oklart fan den denna kod gör, men den körs bara om filen körs direkt, "sägs de" 
-    
-    def spara(filnamn, uppgift):  # sparar uppgiften i en textfil
-        with open(filnamn, 'w') as f: # öppnar filen i skrivläge
-         f.write(uppgift) # skriver uppgiften i filen
+def spara(filnamn, uppgifter):  # uppgifter är en lista
+    with open(filnamn, 'w') as f:
+        for uppgift in uppgifter:
+            f.write(uppgift + "\n")
+    print("Listan har sparats.")
 
-    def ladda(filnamn): # laddar uppgiften från en textfil
-        if not os.path.exists(filnamn): # kollar om filen finns
-            print(f"Filen '{filnamn}' hittades inte.") # om filen inte finns, skrivs detta ut
-            return None
-        with open(filnamn, 'r') as f: # öppnar filen i läsläge
-            return f.read() # returnerar innehållet i filen
+def ladda(filnamn):
+    if not os.path.exists(filnamn):
+        print(f"Filen '{filnamn}' hittades inte.")
+        return []
+    with open(filnamn, 'r') as f:
+        return [rad.strip() for rad in f.readlines()]
     
-    
+if __name__ == "__main__":
+    pass
+

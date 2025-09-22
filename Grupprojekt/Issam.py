@@ -21,11 +21,12 @@ def ta_bort_uppgift(uppgifter, index):
     return uppgifter
 
 
-def todo_app():
-    uppgifter = []
+def todo_app(uppgifter):
     uppgifter = lägg_till_uppgifter(uppgifter)
-    uppgifter = lägg_till_uppgifter(uppgifter)
-    lista_uppgifter(uppgifter)
+    return uppgifter
+
+
+
 
 if __name__ == "__main__":
     todo_app() # kör todo_app funktionen om filen körs direkt
