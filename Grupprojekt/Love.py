@@ -1,4 +1,3 @@
-import Issam as i
 def meny(): #Skapar meny för användaren 
         while True: 
             print("Välkommen till din to do lista.") 
@@ -24,3 +23,5 @@ meny()
 
 if __name__ == "__main__":
         pass
+
+# hej svejs
