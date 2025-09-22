@@ -19,9 +19,9 @@ def meny(): #Skapar meny för användaren
             else: #Säger till om användaren inmatar något val som inte finns
                 print("Valet finns inte med i listan. Försök igen")
 
-meny()
+
 
 if __name__ == "__main__":
-        pass
+        meny()
 
 # hej svejs
